@@ -8,7 +8,7 @@
         <style>body {
             margin: 2cm;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
         }
 
         /* Logo */
@@ -210,7 +210,7 @@
 <body>
 
     <!-- ========== Seite 1 ========== -->
-    <img src="{{ asset('assets/pdf_logo/01.jpeg') }}" alt="Cloud Eatery Logo" class="logo">
+    <img src="logo.png" alt="Cloud Eatery Logo" class="logo">
     <h1>Kooperationsvereinbarung</h1>
 
     <div class="intro">
@@ -229,7 +229,7 @@
             <th class="label" rowspan="5">Kooperationspartner:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->restaurantname }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -237,7 +237,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->owner_name }}</span>
+                    <span class="hint-text">{{ $form->company_name }}</span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -245,7 +245,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->managing_director }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -253,8 +253,8 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->post_address }}</span>
-                    <div class="line"></div>
+                    <span class="hint-text"></span>
+                    <div class="line">{{ $form->delivery_address }}</div>
                 </div>
             </td>
         </tr>
@@ -275,7 +275,15 @@
             <th class="label" rowspan="4">Kontaktdaten:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->contact_person }}</span>
+                    <span class="hint-text"></span>
+                    <div class="line">{{ $form->primary_contact }}</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field">
+                <div class="hint-line">
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -283,25 +291,17 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->phone_number }}</span>
-                    <div class="line"></div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="field">
-                <div class="hint-line">
-                    <span class="hint-text">{{ $form->mobile_number }}</span>
+                    <span class="hint-text"></span>
 
-                    <div class="line"></div>
+                    <div class="line">{{ $form->mobile_number }}</div>
                 </div>
             </td>
         </tr>
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->email }}</span>
-                    <div class="line"></div>
+                    <span class="hint-text"></span>
+                    <div class="line">{{ $form->email }}</div>
                 </div>
             </td>
         </tr>
@@ -318,7 +318,7 @@
             <th class="label" rowspan="3">Standortdaten:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->location_address }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -326,7 +326,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ \Carbon\Carbon::parse($form->start_date)->format('d.m.Y') }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -336,7 +336,7 @@
             <td class="field">
                 <div class="hint-line">
                     <!-- keine hint-text, nur die Unterstrich-Linie -->
-                    <span class="hint-text">{{ $form->opening_hours_days }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -361,7 +361,7 @@
             <th class="label"></th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->vat_id }}</span>
+                    <span class="hint-text">{{ $form->vat_id_number }}</span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -370,7 +370,7 @@
             <th class="label"></th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->iban }}</span>
+                    <span class="hint-text"> {{ $form->bank_details }}</span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -449,7 +449,7 @@
     <div class="box-section">
         <div class="hint-line">
             <span class="label-inline">Startgebühr:</span>
-            <span class="hint-text">{{ $form->start_fee }} Euro</span>
+            <span class="hint-text"> Euro</span>
             {{-- <div class="line" style="display:inline-block; width:200px;"> {{ $form->start_fee }}</div>
             <span> Euro</span> --}}
         </div>
@@ -468,7 +468,7 @@
         <div class="hint-line">
             <span class="label-inline">Benötigte zusätzliche Küchen­ausstattung:</span>
             {{-- <div class="line" style="display:inline-block; width:100%;"></div> --}}
-            <span class="hint-text">{{ $form->additional_kitchen_equipment }}</span>
+            <span class="hint-text"></span>
         </div>
 
         <p><strong>Auslieferung:</strong></p>
@@ -535,13 +535,15 @@
         <tr>
             <td>
                 <div class="line"></div>
-                <img src="{{ asset('storage/' . $form->signature_licensee) }}" alt="Lizenznehmer Signatur" style="width: 200px; height: auto;"><br>
+                <img src="#" alt="Lizenznehmer Signatur"
+                    style="width: 200px; height: auto;"><br>
                 <br>Lizenznehmer
             </td>
             <td>
                 <div class="line"></div>
                 {{-- {{ asset('storage/' . $form->signature_licensor) }} --}}
-                <img src="{{ asset('storage/' . $form->signature_licensor) }}" alt="Lizenzgeber Signatur" style="width: 200px; height: auto;"><br>
+                <img src="#" alt="Lizenzgeber Signatur"
+                    style="width: 200px; height: auto;"><br>
                 <br>Lizenzgeber
             </td>
         </tr>

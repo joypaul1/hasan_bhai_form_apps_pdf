@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormOneController;
+use App\Http\Controllers\FormThreeController;
 use App\Http\Controllers\FormTwoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -27,7 +28,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 Route::middleware('auth')->group(function () {
 
-     // full RESTful resource:
+    // full RESTful resource:
     Route::resource('users', UserController::class);
     //
     // 1) Standard Customer CRUD
@@ -79,6 +80,27 @@ Route::middleware('auth')->group(function () {
         });
     Route::get('customers/{customer}/form-two/pdf/{type}', [FormTwoController::class, 'pdfFormat'])
         ->name('customers.formTwo.pdf');
+
+
+    // … inside Route::middleware('auth')->group(...)
+    Route::prefix('customers/{customer}')
+        ->whereNumber('customer')
+        ->as('customers.')
+        ->group(function () {
+            // Form Three
+            Route::get('form-three', [FormThreeController::class, 'index'])
+                ->name('formThree.index');
+
+            Route::post('form-three', [FormThreeController::class, 'store'])
+                ->name('formThree.store');
+
+            Route::put('form-three', [FormThreeController::class, 'update'])
+                ->name('formThree.update');
+        });
+
+    Route::get('customers/{customer}/form-three/pdf/{type}', [FormThreeController::class, 'pdfFormat'])
+        ->name('customers.formThree.pdf');
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

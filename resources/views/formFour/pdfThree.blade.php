@@ -154,11 +154,11 @@
         </tr>
         <tr>
             <td>Gesetzlicher Name / Firmierung</td>
-            <td>{{ $form->owner_name }}</td>
+            <td></td>
         </tr>
         <tr>
             <td>Vor- und Nachname des Inhabers/Geschäftsführers</td>
-            <td>{{ $form->managing_director }}</td>
+            <td>{{ $form->company_name }}</td>
         </tr>
         <tr>
             <td>Telefonnummer des Unternehmens</td>
@@ -166,7 +166,7 @@
         </tr>
         <tr>
             <td>Kontaktperson</td>
-            <td>{{ $form->contact_person  }}</td>
+            <td>{{ $form->primary_contact  }}</td>
         </tr>
         <tr>
             <td>Mobilnummer (Kontaktperson)</td>
@@ -174,7 +174,7 @@
         </tr>
         <tr>
             <td>Straße und Hausnummer</td>
-            <td>{{ $form->post_address }}</td>
+            <td>{{ $form->delivery_address }}</td>
         </tr>
         <tr>
             <td>Postleitzahl und Ort</td>
@@ -194,11 +194,11 @@
         </tr>
         <tr>
             <td>Umsatzsteuer-ID</td>
-            <td>{{ $form->vat_id }}</td>
+            <td>{{ $form->vat_id_number }}</td>
         </tr>
         <tr>
             <td>Steuernummer</td>
-            <td></td>
+            <td>{{ $form->tax_number }}</td>
         </tr>
         <tr>
             <td>
@@ -294,7 +294,7 @@
         </tr>
         <tr>
             <td>IBAN</td>
-            <td>{{ $form->iban }}</td>
+            <td>{{ $form->bank_details }}</td>
         </tr>
     </table>
 
@@ -397,7 +397,7 @@
     <!-- ────────────── Unterschrift & Logo ────────────── -->
     <!-- ───────────────── Unterschrift ───────────────── -->
     <div class="signature-section">
-        <img src="{{ asset('assets/pdf_logo/03.png') }}"alt="Lieferando Logo" class="logo-right">
+        <img src="lieferando_logo.png" alt="Lieferando Logo" class="logo-right">
 
         <table class="signature-table">
             <tr>
