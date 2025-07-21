@@ -59,6 +59,7 @@ class FormTwoController extends Controller
     function pdfFormat(Customer $customer, $type)
     {
         $form = FormTwo::where('customer_id', $customer->id)->firstOrFail();
+        // dd( $form );
         if ($type == 'one') {
 
             // Generate PDF logic here, e.g., using a package like dompdf or snappy

@@ -50,7 +50,7 @@
                         class="mr-2 btn btn-flat btn-outline-warning"><i class="ti-printer"></i> PDF-02</a>
                     <a target="_blank" href="{{ url('customers.formOne.pdfThree', $customer) }}"
                         class="mr-2 btn btn-flat btn-outline-warning"><i class="ti-printer"></i> PDF-03</a>
-                    <a target="_blank" href="{{ url('customers.formOne.pdfFour', $customer) }}" 
+                    <a target="_blank" href="{{ url('customers.formOne.pdfFour', $customer) }}"
                     class="btn btn-flat btn-outline-warning"><i
                             class="ti-printer"></i> PDF-04</a>
                 </div>

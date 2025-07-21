@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('customers', CustomerController::class);
 
     //
-    // 2) Your one-off “customerForm” action on CustomerController
+    // 2) Your one-off “customerForm” action on CustomerCoxntroller
     //
     Route::get('customer-form/{id}', [CustomerController::class, 'customerForm'])
         ->name('customer-form');
@@ -77,7 +77,7 @@ Route::middleware('auth')->group(function () {
             Route::put('form-two',    [FormTwoController::class, 'update'])
                 ->name('formTwo.update');
         });
-    Route::get('customers/{customer}/form-two/pdf/{type}', [FormTwoController::class, 'pdfOne'])
+    Route::get('customers/{customer}/form-two/pdf/{type}', [FormTwoController::class, 'pdfFormat'])
         ->name('customers.formTwo.pdf');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
