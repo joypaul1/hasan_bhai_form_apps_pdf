@@ -163,15 +163,15 @@
         <table>
             <tr>
                 <th>Name des Restaurants</th>
-                <td class="input"><input type="text" value="{{ $form->restaurantname }}"></td>
+                <td class="input"><input type="text" value=""></td>
             </tr>
             <tr>
                 <th>Gesetzlicher Name des Restaurants</th>
-                <td class="input"><input type="text" name="legal_name" value="{{ $form->owner_name }}"></td>
+                <td class="input"><input type="text" name="legal_name" value=""></td>
             </tr>
             <tr>
                 <th>Handelsregisternummer / Gemeindekennzahl</th>
-                <td class="input"><input type="text" name="registry_number" placeholder="z. B. HRB …"></td>
+                <td class="input"><input type="text" name="registry_number" value="{{ $form->company_name }}" placeholder="z. B. HRB …"></td>
             </tr>
         </table>
     </div>
@@ -210,9 +210,9 @@
         <table>
             <tr>
                 <th>Vorname</th>
-                <td class="input"><input type="text" name="ubo1_first_name" value="{{ $form->contact_person }}"></td>
+                <td class="input"><input type="text" name="ubo1_first_name" value="{{ $form->primary_contact }}"></td>
                 <th>Nachname</th>
-                <td class="input"><input type="text" name="ubo1_last_name" value="{{ $form->contact_person }}"></td>
+                <td class="input"><input type="text" name="ubo1_last_name" value="{{ $form->primary_contact }}"></td>
             </tr>
             <tr>
                 <th>Geburtsdatum</th>
@@ -377,7 +377,7 @@
         <table class="signature-table">
             <tr>
                 <th>Vor- und Nachname<br>Unterzeichner</th>
-                <td class="input"><input type="text" name="sig_name" value="{{ $form->contact_person }}" /></td>
+                <td class="input"><input type="text" name="sig_name" value="{{ $form->primary_contact }}" /></td>
                 <!-- pull the signature label down over 3 rows -->
                 <th class="sig-label" rowspan="3" style="vertical-align: middle;">Unterschrift</th>
                 <!-- pull the blank signature area down over 3 rows -->
