@@ -28,3 +28,11 @@
         </div>
     </body>
 </html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+    window.print();
+  });
+  window.addEventListener('afterprint', () => {
+    window.close();
+  });
+</script>

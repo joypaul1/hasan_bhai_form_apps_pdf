@@ -207,7 +207,7 @@
     </style>
 </head>
 
-<body>
+<body onload="window.print()">
 
     <!-- ========== Seite 1 ========== -->
     <img src="{{ asset('assets/pdf_logo/01.jpeg') }}" alt="Cloud Eatery Logo" class="logo">
@@ -601,3 +601,11 @@
 </body>
 
 </html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+    window.print();
+  });
+  window.addEventListener('afterprint', () => {
+    window.close();
+  });
+</script>

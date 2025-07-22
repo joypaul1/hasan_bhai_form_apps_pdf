@@ -115,7 +115,7 @@
     </style>
 </head>
 
-<body>
+<body onload="window.print()">
     <form class="neukunde">
         <table>
             <!-- Title row -->
@@ -215,3 +215,11 @@
 </body>
 
 </html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+    window.print();
+  });
+  window.addEventListener('afterprint', () => {
+    window.close();
+  });
+</script>

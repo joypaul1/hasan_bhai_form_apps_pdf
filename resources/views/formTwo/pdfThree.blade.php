@@ -123,7 +123,8 @@
     </style>
 </head>
 
-<body>
+<body onload="window.print()">
+
 
     <!-- ========== Seite 1 ========== -->
     <table>
@@ -629,3 +630,11 @@
 </body>
 
 </html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+    window.print();
+  });
+  window.addEventListener('afterprint', () => {
+    window.close();
+  });
+</script>

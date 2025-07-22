@@ -149,7 +149,7 @@
     </style>
 </head>
 
-<body>
+<body onload="window.print()">
 
     <!-- Page 1 -->
     <div class="header">
@@ -404,3 +404,11 @@
 </body>
 
 </html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+    window.print();
+  });
+  window.addEventListener('afterprint', () => {
+    window.close();
+  });
+</script>
