@@ -6,7 +6,7 @@
                  <div class="logo">
                      {{-- <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo"></a> --}}
                      <a href="{{ route('dashboard') }}">
-                         <strong> CloudEatery Partner Onboarding Form</p>
+                         <strong> CloudEatery Partner Onboarding Form</strong>
                      </a>
                  </div>
              </div>
