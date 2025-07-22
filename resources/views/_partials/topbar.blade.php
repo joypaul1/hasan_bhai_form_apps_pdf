@@ -4,10 +4,10 @@
          <div class="row align-items-center">
              <div class="col-md-3">
                  <div class="logo">
-                     <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo"></a>
-                     {{-- <a href="{{ route('dashboard') }}">
-                         <p> CloudEatery Partner Onboarding Form</p>
-                     </a> --}}
+                     {{-- <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo"></a> --}}
+                     <a href="{{ route('dashboard') }}">
+                         <strong> CloudEatery Partner Onboarding Form</p>
+                     </a>
                  </div>
              </div>
              <!-- profile info & task notification -->
