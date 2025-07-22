@@ -4,7 +4,10 @@
          <div class="row align-items-center">
              <div class="col-md-3">
                  <div class="logo">
-                     <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/icon/logo2.png') }}" alt="logo"></a>
+                     {{-- <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/icon/logo2.png') }}" alt="logo"></a> --}}
+                     <a href="{{ route('dashboard') }}">
+                         <p> CloudEatery Partner Onboarding Form</p>
+                     </a>
                  </div>
              </div>
              <!-- profile info & task notification -->
@@ -154,30 +157,31 @@
                                     <i class="ti-settings"></i>
                                 </li>
                             </ul>
-                        </div>--}}
-                         <div class="clearfix d-md-inline-block d-block">
-                             <div class="m-0 user-profile">
-                                 <img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png') }}" alt="avatar">
-                                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ auth()->user()->name }}
-                                     <i class="fa fa-angle-down"></i></h4>
-                                 <div class="dropdown-menu">
-                                     {{-- <a class="dropdown-item" href="#">Message</a>
+                        </div> --}}
+                     <div class="clearfix d-md-inline-block d-block">
+                         <div class="m-0 user-profile">
+                             <img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png') }}"
+                                 alt="avatar">
+                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ auth()->user()->name }}
+                                 <i class="fa fa-angle-down"></i>
+                             </h4>
+                             <div class="dropdown-menu">
+                                 {{-- <a class="dropdown-item" href="#">Message</a>
                                     <a class="dropdown-item" href="#">Settings</a> --}}
-                                     {{-- <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a> --}}
-                                     <!-- Logout Dropdown Link -->
-                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                         {{ __('Log Out') }}
-                                     </a>
+                                 {{-- <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a> --}}
+                                 <!-- Logout Dropdown Link -->
+                                 <a class="dropdown-item" href="{{ route('logout') }}"
+                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                     {{ __('Log Out') }}
+                                 </a>
 
-                                     <!-- Hidden Logout Form -->
-                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                         class="d-none">
-                                         @csrf
-                                     </form>
-                                 </div>
+                                 <!-- Hidden Logout Form -->
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                     @csrf
+                                 </form>
                              </div>
                          </div>
+                     </div>
                  </div>
              </div>
          </div>
