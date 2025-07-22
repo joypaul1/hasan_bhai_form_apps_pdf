@@ -229,7 +229,15 @@
             <th class="label" rowspan="5">Kooperationspartner:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->restaurantname }}</span>
+                    <span class="hint-text"></span>
+                    <div class="line"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field">
+                <div class="hint-line">
+                    <span class="hint-text">{{ $form->legal_name }}</span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -245,15 +253,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->managing_director }}</span>
-                    <div class="line"></div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="field">
-                <div class="hint-line">
-                    <span class="hint-text">{{ $form->post_address }}</span>
+                    <span class="hint-text">{{ $form->street }}</span>
                     <div class="line"></div>
                 </div>
             </td>
