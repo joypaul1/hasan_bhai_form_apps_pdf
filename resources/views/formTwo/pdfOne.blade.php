@@ -210,7 +210,7 @@
 <body>
 
     <!-- ========== Seite 1 ========== -->
-    <img src="logo.png" alt="Cloud Eatery Logo" class="logo">
+    <img src="{{ asset('assets/pdf_logo/01.jpeg') }}" alt="Cloud Eatery Logo" class="logo">
     <h1>Kooperationsvereinbarung</h1>
 
     <div class="intro">
@@ -535,15 +535,12 @@
         <tr>
             <td>
                 <div class="line"></div>
-                <img src="#" alt="Lizenznehmer Signatur"
-                    style="width: 200px; height: auto;"><br>
+                <img src="{{ asset('storage/' . $form->signature_licensee) }}" alt="Lizenznehmer Signatur" style="width: 200px; height: auto;"><br>
                 <br>Lizenznehmer
             </td>
             <td>
                 <div class="line"></div>
-                {{-- {{ asset('storage/' . $form->signature_licensor) }} --}}
-                <img src="#" alt="Lizenzgeber Signatur"
-                    style="width: 200px; height: auto;"><br>
+                <img src="{{ asset('storage/' . $form->signature_licensor) }}" alt="Lizenzgeber Signatur" style="width: 200px; height: auto;"><br>
                 <br>Lizenzgeber
             </td>
         </tr>

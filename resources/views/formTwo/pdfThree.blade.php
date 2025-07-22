@@ -397,7 +397,7 @@
     <!-- ────────────── Unterschrift & Logo ────────────── -->
     <!-- ───────────────── Unterschrift ───────────────── -->
     <div class="signature-section">
-        <img src="lieferando_logo.png" alt="Lieferando Logo" class="logo-right">
+        <img src="{{ asset('assets/pdf_logo/03.png') }}"alt="Lieferando Logo" class="logo-right">
 
         <table class="signature-table">
             <tr>
@@ -419,7 +419,6 @@
             yd. yourdelivery GmbH (Lieferando) | Cuvrystr. 50, 52, 54 / Schlesische Str. 34 | 10997 Berlin |
             Geschäftsführung: Lennard Neubauer
         </p>
-        <p class="footer-page-number">1</p>
     </div>
 
 

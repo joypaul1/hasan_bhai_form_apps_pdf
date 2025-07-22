@@ -540,7 +540,6 @@
             </td>
             <td>
                 <div class="line"></div>
-                {{-- {{ asset('storage/' . $form->signature_licensor) }} --}}
                 <img src="{{ asset('storage/' . $form->signature_licensor) }}" alt="Lizenzgeber Signatur" style="width: 200px; height: auto;"><br>
                 <br>Lizenzgeber
             </td>

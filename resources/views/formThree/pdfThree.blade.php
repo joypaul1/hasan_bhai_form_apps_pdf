@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <title>Anmeldeformular Ketten</title>
@@ -10,36 +11,70 @@
             font-size: 0.9em;
             line-height: 1.4;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 1em;
             table-layout: fixed;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #000;
             padding: 0.4em 0.6em;
             vertical-align: top;
             word-wrap: break-word;
         }
+
         .section-header {
             background: #fdebd0;
             font-weight: bold;
             text-transform: uppercase;
         }
+
         .checkbox-cell {
             text-align: center;
         }
-        .page-break { page-break-before: always; }
-        .signature-table td { border: none; text-align: center; padding: 0.5em; }
-        .signature-table .line { border-bottom: 1px solid #000; width: 200px; margin: 0 auto 0.5em; }
-        .logo-right { float: right; width: 80px; margin-bottom: 0.5em; }
-        .signature-section { clear: both; margin-bottom: 1.5em; }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .signature-table td {
+            border: none;
+            text-align: center;
+            padding: 0.5em;
+        }
+
+        .signature-table .line {
+            border-bottom: 1px solid #000;
+            width: 200px;
+            margin: 0 auto 0.5em;
+        }
+
+        .logo-right {
+            float: right;
+            width: 80px;
+            margin-bottom: 0.5em;
+        }
+
+        .signature-section {
+            clear: both;
+            margin-bottom: 1.5em;
+        }
+
         @media print {
-            .footer-container { position: fixed; bottom: 1cm; left: 0; width: 100%; }
+            .footer-container {
+                position: fixed;
+                bottom: 1cm;
+                left: 0;
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ========== Seite 1 ========== -->
@@ -204,11 +239,36 @@
             <td>{{ $form->iban }}</td>
         </tr>
     </table>
+    <table>
+        <tr class="section-header">
+            <th colspan="1">Franchisenehmer-Erklärung</th>
+        </tr>
+        <tr>
+            <td style="padding:0.8em;">
+                Diese zusätzlichen Erklärungen gelten, wenn Sie Teil einer Franchise-Organisation sind, die mit uns
+                zusammenarbeitet.
+                <ul style="margin:0.5em 1.5em;">
+                    <li>● Sie erklären, die Bedingungen aller Vereinbarungen zwischen dem Franchisegeber und uns
+                        erhalten zu haben und anzuerkennen und alle Rechte und Pflichten zu übernehmen, die sich daraus
+                        ergeben, soweit diese für Sie gelten;</li>
+                    <li>● Sie bevollmächtigen den Franchisegeber, Sie in allen Angelegenheiten, die Ihren Eintrag auf
+                        der Plattform betreffen, zu vertreten (z. B. bei der Verwaltung von Preisen, Speisekarten oder
+                        Lieferzonen);</li>
+                    <li>Sie erklären sich damit einverstanden, dass Ihre Umsatz- und Leistungsdaten (einschließlich der
+                        aggregierten Bestellwerte und der Anzahl der Bestellungen) an den Franchisegeber weitergegeben
+                        werden; und</li>
+                    <li>● Sie erklären sich hiermit unwiderruflich damit einverstanden, dass wir alle Beträge, die wir
+                        Ihnen aufgrund einer Vereinbarung zwischen uns schulden, mit sofortiger Wirkung direkt an den
+                        Franchisegeber zahlen, sofern dies zwischen dem Franchisegeber und uns vereinbart wurde. Mit der
+                        Zahlung dieser Beträge an den Franchisegeber sind unsere Verpflichtungen zur Zahlung dieser
+                        Beträge an Sie aus diesem Vertrag vollständig erfüllt</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
     <!-- Franchisenehmer-Erklärung unverändert… -->
 
-    <!-- ========== Seite 3 ========== -->
-    <div class="page-break"></div>
 
     <!-- Sonstiges & Bedingungen unverändert… -->
 
@@ -250,6 +310,71 @@
         <tr>
             <td>E-Mail-Adresse für Kunden</td>
             <td>{{ $form->site_customer_email }}</td>
+        </tr>
+    </table>
+
+    <!-- ========== Seite 3 ========== -->
+    <div class="page-break"></div>
+
+    <table>
+        <tr class="section-header">
+            <th>Sonstiges</th>
+        </tr>
+        <tr>
+            <td style="height:4em;"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr class="section-header">
+            <th>Bedingungen</th>
+        </tr>
+        <tr>
+            <td style="padding:0.8em;">
+                <strong>Deutsch</strong><br>
+                Allgemeine Geschäftsbedingungen:
+                http://takeaway-restaurant-portal.s3.amazonaws.com/partnersTerms/de/TC_Restaurants_DE_DE.pdf<br>
+                Courier App:
+                https://takeaway-restaurant-portal.s3.eu-west-1.amazonaws.com/partnersTerms/courierApp/Terms-of-Use-TK-CourierApp-DE.pdf<br>
+                Datenschutz Erklärung:
+                http://takeaway-restaurant-portal.s3.amazonaws.com/privacy_policies/Privacy-Statement-Restaurants-DE.pdf
+                <br>
+                <br>
+                <strong>English</strong><br>
+                Allgemeine Geschäftsbedingungen:
+                http://takeaway-restaurant-portal.s3.amazonaws.com/partnersTerms/de/TC_Restaurants_DE_ENG.pdf<br>
+                Courier App:
+                https://takeaway-restaurant-portal.s3.eu-west-1.amazonaws.com/partnersTerms/courierApp/Terms-of-Use-TK-CourierApp-EN.pdf<br>
+                Datenschutz Erklärung:
+                http://takeaway-restaurant-portal.s3.amazonaws.com/privacy_policies/Privacy-Statement-Restaurants-EN.pdf
+                <br>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr class="section-header">
+            <th>Selbstzertifizierung</th>
+        </tr>
+        <tr>
+            <td style="padding:0.8em;">
+                Mit der Unterzeichnung dieses Formulars bestätigen Sie, dass (i) alle Produkte und Dienstleistungen, die
+                Sie zum Verkauf anbieten, den geltenden Gesetzen und Vorschriften sowie den Richtlinien, die wir Ihnen
+                zur Verfügung stellen, entsprechen; (ii) Sie keine Produkte oder Dienstleistungen zum Verkauf anbieten
+                werden, die illegal, gefälscht oder gefährlich sind oder anderweitig die Verbraucherrechte verletzen;
+                und (iii) Sie Wirtschaftsbeteiligter sind und über angemessene Produktrückrufverfahren verfügen
+            </td>
+        </tr>
+    </table>
+    <!-- ────────────── Unterschrift Footer ────────────── -->
+    <table>
+        <tr class="section-header">
+            <th>UNTERSCHRIFT</th>
+        </tr>
+        <tr>
+            <!-- leeres Feld für Unterschrift -->
+            <td> yd. yourdelivery GmbH (Lieferando) | Cuvrystr. 50, 52, 54 / Schlesische Str. 34 | 10997 Berlin |
+                Geschäftsführung: Lennard Neubauer</td>
         </tr>
     </table>
 
@@ -317,19 +442,19 @@
             <td>ab welchem Betrag kostenfrei</td>
         </tr>
         @php
-          // Wenn delivery_area_postal_codes kommagetrennt sind:
-          $zips = explode(',', $form->delivery_area_postal_codes);
+            // Wenn delivery_area_postal_codes kommagetrennt sind:
+            $zips = explode(',', $form->delivery_area_postal_codes);
         @endphp
-        @foreach($zips as $zip)
-        <tr>
-            <td>{{ trim($zip) }}</td>
-            <td>{{ $form->min_order_value }}</td>
-            <td>{{ $form->delivery_cost }}</td>
-            <td>{{ $form->free_delivery_threshold }}</td>
-        </tr>
+        @foreach ($zips as $zip)
+            <tr>
+                <td>{{ trim($zip) }}</td>
+                <td>{{ $form->min_order_value }}</td>
+                <td>{{ $form->delivery_cost }}</td>
+                <td>{{ $form->free_delivery_threshold }}</td>
+            </tr>
         @endforeach
     </table>
- <!-- ────────────── Ihre Lieferzeiten ────────────── -->
+    <!-- ────────────── Ihre Lieferzeiten ────────────── -->
     <div class="page-break"></div>
 
     <table>
@@ -400,4 +525,5 @@
     </table>
     <!-- restliche Teile (Liefer- & Abholzeiten, Unterschrift, Footer) unverändert -->
 </body>
+
 </html>
