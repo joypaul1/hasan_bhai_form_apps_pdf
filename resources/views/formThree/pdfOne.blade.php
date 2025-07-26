@@ -246,7 +246,7 @@
             <th class="label" rowspan="5">Kooperationspartner:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->restaurantname }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -254,7 +254,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->owner_name }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -262,7 +262,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->managing_director }}</span>
+                    <span class="hint-text">{{ $form->owner_name }}  </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -270,7 +270,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->post_address }}</span>
+                    <span class="hint-text">{{ $form->street }} </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -292,7 +292,7 @@
             <th class="label" rowspan="4">Kontaktdaten:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->contact_person }}</span>
+                    <span class="hint-text">{{ $form->contact_person }}  </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -300,7 +300,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->phone_number }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -308,7 +308,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->mobile_number }}</span>
+                    <span class="hint-text">{{ $form->contact_mobile }} </span>
 
                     <div class="line"></div>
                 </div>
@@ -317,7 +317,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->email }}</span>
+                    <span class="hint-text">{{ $form->communication_email }} </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -335,7 +335,7 @@
             <th class="label" rowspan="3">Standortdaten:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->location_address }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -343,7 +343,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ \Carbon\Carbon::parse($form->start_date)->format('d.m.Y') }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -351,7 +351,7 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->opening_hours_days }}</span>
+                    <span class="hint-text"> </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -377,7 +377,7 @@
             <th class="label"></th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->vat_id }}</span>
+                    <span class="hint-text">{{ $form->vat_id }} </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -386,7 +386,7 @@
             <th class="label"></th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->iban }}</span>
+                    <span class="hint-text">{{ $form->iban }}  </span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -465,9 +465,7 @@
     <div class="box-section">
         <div class="hint-line">
             <span class="label-inline">Startgebühr:</span>
-            <span class="hint-text">{{ $form->start_fee }} Euro</span>
-            {{-- <div class="line" style="display:inline-block; width:200px;"> {{ $form->start_fee }}</div>
-            <span> Euro</span> --}}
+            <span class="hint-text">  Euro</span>
         </div>
 
         <p><strong>Lizenzgebühr:</strong></p>
@@ -483,22 +481,17 @@
 
         <div class="hint-line">
             <span class="label-inline">Benötigte zusätzliche Küchen­ausstattung:</span>
-            {{-- <div class="line" style="display:inline-block; width:100%;"></div> --}}
-            <span class="hint-text">{{ $form->additional_kitchen_equipment }}</span>
+            <span class="hint-text"></span>
         </div>
 
         <p><strong>Auslieferung:</strong></p>
         <div class="checkbox-line">
-            {{-- <input type="checkbox" disabled {{ $form->delivery_licensee ? 'checked' : '' }}> --}}
-            {{-- <input type="text" value ="{{ $form->delivery_licensee ? 'Yes' : 'No' }}"> --}}
-            <strong>{{ $form->delivery_licensee ? 'Yes' : 'No' }}</strong>
+            <strong></strong>
             <label for="own_driver">Eigene Fahrer: Zustellung durch den
                 Lizenznehmer</label>
         </div>
         <div class="checkbox-line">
-            <strong>{{ $form->delivery_platform ? 'Yes' : 'No' }}</strong>
-            {{-- <input type="checkbox" disabled {{ $form->delivery_platform ? 'checked' : '' }}> --}}
-            {{-- <input type="text" value ="{{ $form->delivery_platform ? 'Yes' : 'No' }}"> --}}
+            <strong></strong>
             <label for="platform">Plattform: Zustellung durch den
                 Lieferdienst</label>
         </div>
@@ -555,13 +548,13 @@
         <tr>
             <td>
                 <div class="line"></div>
-                <img src="{{ asset('storage/' . $form->signature_licensee) }}" alt="Lizenznehmer Signatur"
+                <img src="#" alt="Lizenznehmer Signatur"
                     style="width: 200px; height: auto;"><br>
                 <br>Lizenznehmer
             </td>
             <td>
                 <div class="line"></div>
-                <img src="{{ asset('storage/' . $form->signature_licensor) }}" alt="Lizenzgeber Signatur"
+                <img src="#" alt="Lizenzgeber Signatur"
                     style="width: 200px; height: auto;"><br>
                 <br>Lizenzgeber
             </td>
