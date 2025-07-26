@@ -2,8 +2,8 @@
  <div class="mainheader-area">
      <div class="container">
          <div class="row align-items-center">
-             <div class="col-md-3">
-                 <div class="logo">
+             <div class="col-md-7">
+                 <div class="text-right logo">
                      {{-- <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo"></a> --}}
                      <a href="{{ route('dashboard') }}">
                          <strong> CloudEatery Partner Onboarding Form</strong>
@@ -11,7 +11,7 @@
                  </div>
              </div>
              <!-- profile info & task notification -->
-             <div class="clearfix text-right col-md-9">
+             <div class="clearfix text-right col-md-5">
                  <div class="d-md-inline-block d-block mr-md-4">
                      {{-- <ul class="notification-area">
                          <li id="full-view"><i class="ti-fullscreen"></i></li>

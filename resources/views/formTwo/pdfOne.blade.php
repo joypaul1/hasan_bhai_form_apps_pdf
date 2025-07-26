@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <title>Kooperationsvereinbarung</title>
     <style>
-        <style>body {
+        body {
             margin: 2cm;
             font-family: Arial, sans-serif;
-            line-height: 1.4;
+            line-height: 1.6;
+            text-align: justify;
         }
 
         /* Logo */
         .logo {
             display: block;
             margin: 0 auto 1em;
-            width: 120px;
+            width: 200px;
         }
 
         /* Titel */
@@ -26,18 +27,22 @@
         }
 
         /* Einleitung */
+        .intro {
+            margin-bottom: 3em;
+        }
+
         .intro p {
-            margin: 0.4em 0;
+            margin: 0.5em 0;
         }
 
         .intro .sub {
             font-style: italic;
-            text-align: center;
+            text-align: right;
             margin: 0.2em 0 1em;
         }
 
         .intro .and {
-            text-align: center;
+            text-align: left;
             margin: 1em 0;
             font-style: italic;
         }
@@ -72,6 +77,7 @@
             padding-right: 1em;
             font-weight: bold;
             text-align: left;
+            font-size: 14px
         }
 
         .block-table .field {
@@ -86,8 +92,10 @@
         .hint-line .hint-text {
             display: block;
             font-size: 0.95em;
-            color: #666;
+            /* color: #666; */
+            color: #2c2828;
             margin-bottom: 0.2em;
+            /* margin-left: 0.8em; */
         }
 
         .hint-line .line {
@@ -117,12 +125,19 @@
         }
 
         .checkbox-line {
+            display: flex;
+            justify-content: left;
+            align-items: center;
             margin-bottom: 0.5em;
         }
 
-        .checkbox-line input {
+        .checkbox-line strong {
             margin-right: 0.5em;
         }
+
+        /* .checkbox-line input {
+            margin-right: 0.5em;
+        } */
 
         /* Abschnitts-Überschriften */
         h2 {
@@ -158,6 +173,10 @@
             margin: 2em 0 0.5em;
             text-transform: uppercase;
         }
+
+        /* .preamble{
+
+        } */
 
         h3 {
             margin: 1.5em 0 0.5em;
@@ -204,19 +223,19 @@
         }
     </style>
 
-    </style>
 </head>
+{{-- onload="window.print()" --}}
 
-<body onload="window.print()">
+<body>
 
     <!-- ========== Seite 1 ========== -->
-    <img src="{{ asset('assets/pdf_logo/01.jpeg') }}" alt="Cloud Eatery Logo" class="logo">
+    <img src="{{ asset('assets/pdf_logo/01.png') }}" alt="Cloud Eatery Logo" class="logo">
     <h1>Kooperationsvereinbarung</h1>
 
     <div class="intro">
         <p>zwischen der <strong>CloudEatery GmbH</strong>, vertreten durch den Geschäftsführer Remo Gianfrancesco,
             Kaiserstraße 65, 60329 Frankfurt</p>
-        <p class="sub">(nachfolgend: „Lizenzgeber“)</p>
+        <p class="sub">(nachfolgend: <strong>„Lizenzgeber“</strong>)</p>
         <p class="and">und</p>
     </div>
     <!-- Kooperationspartner -->
@@ -254,7 +273,7 @@
             <td class="field">
                 <div class="hint-line">
                     <span class="hint-text"></span>
-                    <div class="line">{{ $form->delivery_address }}</div>
+                    <div class="line"></div>
                 </div>
             </td>
         </tr>
@@ -275,15 +294,7 @@
             <th class="label" rowspan="4">Kontaktdaten:</th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text"></span>
-                    <div class="line">{{ $form->primary_contact }}</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="field">
-                <div class="hint-line">
-                    <span class="hint-text"></span>
+                    <span class="hint-text">{{ $form->delivery_address }}</span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -291,17 +302,25 @@
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text"></span>
-
-                    <div class="line">{{ $form->mobile_number }}</div>
+                    <span class="hint-text">{{ $form->primary_contact }}</span>
+                    <div class="line"></div>
                 </div>
             </td>
         </tr>
         <tr>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text"></span>
-                    <div class="line">{{ $form->email }}</div>
+                    <span class="hint-text"> </span>
+
+                    <div class="line"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field">
+                <div class="hint-line">
+                    <span class="hint-text">{{ $form->mobile_number }}</span>
+                    <div class="line"></div>
                 </div>
             </td>
         </tr>
@@ -318,6 +337,14 @@
             <th class="label" rowspan="3">Standortdaten:</th>
             <td class="field">
                 <div class="hint-line">
+                    <span class="hint-text">{{ $form->email }}</span>
+                    <div class="line"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field">
+                <div class="hint-line">
                     <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
@@ -331,16 +358,7 @@
                 </div>
             </td>
         </tr>
-        <!-- Neue, dritte Zeile für die zusätzliche Linie -->
-        <tr>
-            <td class="field">
-                <div class="hint-line">
-                    <!-- keine hint-text, nur die Unterstrich-Linie -->
-                    <span class="hint-text"></span>
-                    <div class="line"></div>
-                </div>
-            </td>
-        </tr>
+
     </table>
 
 
@@ -361,7 +379,7 @@
             <th class="label"></th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text">{{ $form->vat_id_number }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -370,7 +388,7 @@
             <th class="label"></th>
             <td class="field">
                 <div class="hint-line">
-                    <span class="hint-text"> {{ $form->bank_details }}</span>
+                    <span class="hint-text"></span>
                     <div class="line"></div>
                 </div>
             </td>
@@ -450,8 +468,6 @@
         <div class="hint-line">
             <span class="label-inline">Startgebühr:</span>
             <span class="hint-text"> Euro</span>
-            {{-- <div class="line" style="display:inline-block; width:200px;"> {{ $form->start_fee }}</div>
-            <span> Euro</span> --}}
         </div>
 
         <p><strong>Lizenzgebühr:</strong></p>
@@ -467,18 +483,17 @@
 
         <div class="hint-line">
             <span class="label-inline">Benötigte zusätzliche Küchen­ausstattung:</span>
-            {{-- <div class="line" style="display:inline-block; width:100%;"></div> --}}
-            <span class="hint-text"></span>
+            <span class="hint-text">{{ $form->additional_kitchen_equipment }}</span>
         </div>
 
         <p><strong>Auslieferung:</strong></p>
         <div class="checkbox-line">
-            <input type="checkbox" disabled {{ $form->delivery_licensee ? 'checked' : '' }}>
+            <strong></strong>
             <label for="own_driver">Eigene Fahrer: Zustellung durch den
                 Lizenznehmer</label>
         </div>
         <div class="checkbox-line">
-            <input type="checkbox" disabled {{ $form->delivery_platform ? 'checked' : '' }}>
+            <strong></strong>
             <label for="platform">Plattform: Zustellung durch den
                 Lieferdienst</label>
         </div>
@@ -525,22 +540,24 @@
         <tr>
             <td>
                 <div class="line"></div>
-                Ort, Datum
+                {{ date('d/m/Y') }}
             </td>
             <td>
                 <div class="line"></div>
-                Ort, Datum
+                {{ date('d/m/Y') }}
             </td>
         </tr>
         <tr>
             <td>
                 <div class="line"></div>
-                <img src="{{ asset('storage/' . $form->signature_licensee) }}" alt="Lizenznehmer Signatur" style="width: 200px; height: auto;"><br>
+                <img src="{{ asset('storage/' . $form->signature_licensee) }}" alt="Lizenznehmer Signatur"
+                    style="width: 200px; height: auto;"><br>
                 <br>Lizenznehmer
             </td>
             <td>
                 <div class="line"></div>
-                <img src="{{ asset('storage/' . $form->signature_licensor) }}" alt="Lizenzgeber Signatur" style="width: 200px; height: auto;"><br>
+                <img src="{{ asset('storage/' . $form->signature_licensor) }}" alt="Lizenzgeber Signatur"
+                    style="width: 200px; height: auto;"><br>
                 <br>Lizenzgeber
             </td>
         </tr>
@@ -549,7 +566,7 @@
     <div class="page-break"></div>
     <!-- Anlagenverzeichnis -->
     <h2 class="attachment-title">ANLAGENVERZEICHNIS</h2>
-    <p>
+    <p style="line-height: 10rem;">
         Anlage 1 Gebühren und Leistungsziele<br>
         Anlage 2 Allgemeine Lizenzbedingungen<br>
         Anlage 3 Datenschutzhinweise<br>
@@ -590,11 +607,6 @@
                 www.cloudeatery.de/allgemeinelizenzbedingungen
             </a>
         </p>
-
-        <!-- Anlage 3 Platzhalter: immer ganz unten auf dieser Seite -->
-        <p class="anl3-placeholder">
-            ........................................................................................
-        </p>
     </div>
 
 
@@ -603,9 +615,9 @@
 </html>
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    window.close();
-  });
+        window.print();
+    });
+    window.addEventListener('afterprint', () => {
+        window.close();
+    });
 </script>
