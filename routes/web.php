@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormOneController;
 use App\Http\Controllers\FormThreeController;
+use App\Http\Controllers\FormFourController;
 use App\Http\Controllers\FormTwoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -100,6 +101,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('customers/{customer}/form-three/pdf/{type}', [FormThreeController::class, 'pdfFormat'])
         ->name('customers.formThree.pdf');
+    Route::prefix('customers/{customer}')
+        ->whereNumber('customer')
+        ->as('customers.')
+        ->group(function () {
+            Route::get('form-four', [FormFourController::class, 'index'])->name('formFour.index');
+            Route::post('form-four', [FormFourController::class, 'store'])->name('formFour.store');
+            Route::put('form-four', [FormFourController::class, 'update'])->name('formFour.update');
+        });
+
+    Route::get('customers/{customer}/form-four/pdf/{type}', [FormFourController::class, 'pdfFormat'])
+        ->name('customers.formFour.pdf');
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

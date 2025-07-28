@@ -7,6 +7,7 @@
             'customers.formOne.index' => 'Report-01',
             'customers.formTwo.index' => 'Report-02',
             'customers.formThree.index' => 'Report-03',
+            'customers.formFour.index' => 'Report-04'
             // 'customers.formFour.index' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
         ];
         // Slugs you pass as the 2nd param to the route + the label suffix
@@ -36,17 +37,6 @@
                 'report-04' => ['file' => 'customers.formThree.pdf', 'param' => 'four'],
             ],
         ];
-        // foreach ($reports as $groupLabel => $items) {
-        //     dd($groupLabel, $items);
-        //     foreach ($items as $reportCode => $item) {
-        //         $routeName = "customers.form{$item['param']}.pdf";
-
-        //         $pdf_variants[$item['param']] = $groupLabel;
-        //     }
-        // }
-
-        $formSegments = ['One', 'Two', 'Three', 'Four']; // extend if you have more
-        $pdfVariants = ['one' => '01', 'two' => '02', 'three' => '03', 'four' => '04'];
 
     @endphp
 
@@ -84,7 +74,7 @@
                                 @foreach ($items as $reportCode => $item)
                                     <a href="{{ route( $item['file'], [$customer, $item['param']]) }}" target="_blank"
                                         class="dropdown-item">
-                                        {{ $reportCode }} 
+                                        {{ $reportCode }}
                                     </a>
                                 @endforeach
                             </div>
