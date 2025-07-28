@@ -149,13 +149,13 @@
     </style>
 </head>
 
-<body onload="window.print()">
+<body >
 
     <!-- Page 1 -->
     <div class="header">
         <img src="{{ asset('assets/pdf_logo/02.png') }}" alt="Lieferando.de Logo">
-        <div class="title">Ultimate Beneficial Ownership (UBO) Declaration Form</div>
-        <div class="subtitle">Erklärung des Inhabers/Gesellschafters</div>
+        {{-- <div class="title">Ultimate Beneficial Ownership (UBO) Declaration Form</div>
+        <div class="subtitle">Erklärung des Inhabers/Gesellschafters</div> --}}
     </div>
 
     <div class="section">
@@ -405,10 +405,10 @@
 
 </html>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    window.close();
-  });
+//     window.addEventListener('DOMContentLoaded', () => {
+//     window.print();
+//   });
+//   window.addEventListener('afterprint', () => {
+//     window.close();
+//   });
 </script>

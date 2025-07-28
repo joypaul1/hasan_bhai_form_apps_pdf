@@ -4,21 +4,50 @@
 @section('content')
     @php
         $form_names = [
-            'customers.formOne.index' => 'CLOUDEATERY Kooperationsvereinbarung',
-            'customers.formTwo.index' => 'Lieferando CloudEatery Registration',
-            'customers.formThree.index' => 'Lieferando CloudEatery Registration Form Chains',
+            'customers.formOne.index' => 'Report-01',
+            'customers.formTwo.index' => 'Report-02',
+            'customers.formThree.index' => 'Report-03',
             // 'customers.formFour.index' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
         ];
         // Slugs you pass as the 2nd param to the route + the label suffix
         $pdf_variants = [
-            'one' => '01',
-            'two' => '02',
-            'three' => '03',
-            'four' => '04',
+            'one' => 'CLOUDEATERY Kooperationsvereinbarung',
+            'two' => 'Lieferando CloudEatery Registration',
+            'three' => 'Lieferando CloudEatery Registration Form Chains',
+            'four' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
         ];
+        $reports = [
+            'CLOUDEATERY Kooperationsvereinbarung' => [
+                'report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
+                'report-02' => ['file' => 'customers.formOne.pdf', 'param' => 'two'],
+                'report-03' => ['file' => 'customers.formOne.pdf', 'param' => 'three'],
+                'report-04' => ['file' => 'customers.formOne.pdf', 'param' => 'four'],
+            ],
+            'Lieferando CloudEatery Registration' => [
+                'report-01' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
+                'report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+                'report-03' => ['file' => 'customers.formTwo.pdf', 'param' => 'three'],
+                'report-04' => ['file' => 'customers.formTwo.pdf', 'param' => 'four'],
+            ],
+            'Lieferando CloudEatery Registration Form Chains' => [
+                'report-01' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
+                'report-02' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
+                'report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
+                'report-04' => ['file' => 'customers.formThree.pdf', 'param' => 'four'],
+            ],
+        ];
+        // foreach ($reports as $groupLabel => $items) {
+        //     dd($groupLabel, $items);
+        //     foreach ($items as $reportCode => $item) {
+        //         $routeName = "customers.form{$item['param']}.pdf";
+
+        //         $pdf_variants[$item['param']] = $groupLabel;
+        //     }
+        // }
+
         $formSegments = ['One', 'Two', 'Three', 'Four']; // extend if you have more
         $pdfVariants = ['one' => '01', 'two' => '02', 'three' => '03', 'four' => '04'];
-       
+
     @endphp
 
     <div class="container py-4" style="border:1px solid blueviolet;">
@@ -42,26 +71,20 @@
                         </div>
                     </div>
                 </div>
-                @foreach ($form_names as $key => $label)
-                    @php
-                        // $loop->index is 0-based
-                        $segment = $formSegments[$loop->index] ?? $formSegments[0];
-                        $routeName = "customers.form{$segment}.pdf";
-                        $btnId = 'entryForm' . $loop->iteration;
-                    @endphp
-
-                    <div class="col-auto {{ $loop->index > 1 ? 'mt-2' : '' }}">
+                @foreach ($reports as $groupLabel => $items)
+                    <div class="col-auto">
                         <div class="mx-2 dropdown">
-                            <button class="btn btn-flat btn-outline-success dropdown-toggle" type="button"
-                                id="{{ $btnId }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ti-printer"></i> {{ $label }} Report
+                            <button class="btn btn-flat btn-outline-info dropdown-toggle" type="button"
+                                id="entryForm-{{ Str::slug($groupLabel) }}" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="ti-files"></i> {{ $groupLabel }}
                             </button>
 
-                            <div class="dropdown-menu" aria-labelledby="{{ $btnId }}">
-                                @foreach ($pdf_variants as $slug => $num)
-                                    <a target="_blank" href="{{ route($routeName, [$customer, $slug]) }}"
+                            <div class="dropdown-menu" aria-labelledby="entryForm-{{ Str::slug($groupLabel) }}">
+                                @foreach ($items as $reportCode => $item)
+                                    <a href="{{ route( $item['file'], [$customer, $item['param']]) }}" target="_blank"
                                         class="dropdown-item">
-                                        <i class="ti-printer"></i> PDF-{{ $num }}
+                                        {{ $reportCode }} 
                                     </a>
                                 @endforeach
                             </div>

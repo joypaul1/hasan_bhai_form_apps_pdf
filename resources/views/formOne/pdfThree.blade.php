@@ -122,8 +122,8 @@
         }
     </style>
 </head>
-
-<body onload="window.print()">
+{{-- onload="window.print()" --}}
+<body >
 
     <!-- ========== Seite 1 ========== -->
     <table>
@@ -631,10 +631,10 @@
 
 </html>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    window.close();
-  });
+//     window.addEventListener('DOMContentLoaded', () => {
+//     window.print();
+//   });
+//   window.addEventListener('afterprint', () => {
+//     window.close();
+//   });
 </script>

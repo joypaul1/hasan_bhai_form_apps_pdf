@@ -146,7 +146,7 @@
             </tr>
             <tr>
                 <th for="delivery_address">Lieferadresse</th>
-                <td colspan="2"><input type="text" id="delivery_address" name="delivery_address" value="{{ $form->post_address }}"></td>
+                <td colspan="2"><input type="text" id="delivery_address" name="delivery_address" value="{{ $form->owner_name }}"></td>
             </tr>
 
             <!-- Yellow highlight block -->
@@ -203,10 +203,10 @@
 
 </html>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    window.close();
-  });
+//     window.addEventListener('DOMContentLoaded', () => {
+//     window.print();
+//   });
+//   window.addEventListener('afterprint', () => {
+//     window.close();
+//   });
 </script>
