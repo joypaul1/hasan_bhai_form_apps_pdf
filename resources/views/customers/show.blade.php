@@ -19,22 +19,28 @@
         ];
         $reports = [
             'CLOUDEATERY Kooperationsvereinbarung' => [
-                'report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-                'report-02' => ['file' => 'customers.formOne.pdf', 'param' => 'two'],
-                'report-03' => ['file' => 'customers.formOne.pdf', 'param' => 'three'],
-                'report-04' => ['file' => 'customers.formOne.pdf', 'param' => 'four'],
+                'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
+                'Report-02' => ['file' => 'customers.formOne.pdf', 'param' => 'two'],
+                'Report-03' => ['file' => 'customers.formOne.pdf', 'param' => 'three'],
+                'Report-04' => ['file' => 'customers.formOne.pdf', 'param' => 'four'],
             ],
             'Lieferando CloudEatery Registration' => [
-                'report-01' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
-                'report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-                'report-03' => ['file' => 'customers.formTwo.pdf', 'param' => 'three'],
-                'report-04' => ['file' => 'customers.formTwo.pdf', 'param' => 'four'],
+                'Report-01' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
+                'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+                'Report-03' => ['file' => 'customers.formTwo.pdf', 'param' => 'three'],
+                'Report-04' => ['file' => 'customers.formTwo.pdf', 'param' => 'four'],
             ],
             'Lieferando CloudEatery Registration Form Chains' => [
-                'report-01' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
-                'report-02' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
-                'report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
-                'report-04' => ['file' => 'customers.formThree.pdf', 'param' => 'four'],
+                'Report-01' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
+                'Report-02' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
+                'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
+                'Report-04' => ['file' => 'customers.formThree.pdf', 'param' => 'four'],
+            ],
+            'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
+                // 'Report-01' => ['file' => 'customers.formFour.pdf', 'param' => 'one'],
+                // 'Report-02' => ['file' => 'customers.formFour.pdf', 'param' => 'two'],
+                // 'Report-03' => ['file' => 'customers.formFour.pdf', 'param' => 'three'],
+                'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
             ],
         ];
 
@@ -42,6 +48,7 @@
 
     <div class="container py-4" style="border:1px solid blueviolet;">
         <h2 class="mb-4 text-center"><i class="ti-files"></i> All Form List Here</h2>
+        <hr>
 
         <div class="card card-body">
             <div class="row justify-content-left align-items-center">

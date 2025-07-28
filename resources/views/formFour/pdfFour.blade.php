@@ -149,13 +149,13 @@
     </style>
 </head>
 
-<body onload="window.print()">
+<body>
 
     <!-- Page 1 -->
     <div class="header">
-        <img src="logo.png" alt="Lieferando.de Logo">
-        <div class="title">Ultimate Beneficial Ownership (UBO) Declaration Form</div>
-        <div class="subtitle">Erklärung des Inhabers/Gesellschafters</div>
+        <img src="{{ asset('assets/pdf_logo/02.png') }}" alt="Lieferando.de Logo">
+        {{-- <div class="title">Ultimate Beneficial Ownership (UBO) Declaration Form</div>
+        <div class="subtitle">Erklärung des Inhabers/Gesellschafters</div> --}}
     </div>
 
     <div class="section">
@@ -163,15 +163,15 @@
         <table>
             <tr>
                 <th>Name des Restaurants</th>
-                <td class="input"><input type="text" value=""></td>
+                <td class="input"><input type="text" value="{{ $form->restaurant_name }}"></td>
             </tr>
             <tr>
                 <th>Gesetzlicher Name des Restaurants</th>
-                <td class="input"><input type="text" name="legal_name" value=""></td>
+                <td class="input"><input type="text" value="{{ $form->legal_restaurant_name }}"></td>
             </tr>
             <tr>
-                <th>Handelsregisternummer / Gemeindekennzahl</th>
-                <td class="input"><input type="text" name="registry_number" value="{{ $form->company_name }}" placeholder="z. B. HRB …"></td>
+                <th>Handelsregisternummer</th>
+                <td class="input"><input type="text" value="{{ $form->trade_register_number }}"></td>
             </tr>
         </table>
     </div>
@@ -201,7 +201,7 @@
 
     <!-- Page 2 -->
 
-
+    @php use Carbon\Carbon; @endphp
     <div class="section">
         <p><strong>B. </strong> Ultimate Beneficial Owner(s)</p>
 
@@ -210,30 +210,23 @@
         <table>
             <tr>
                 <th>Vorname</th>
-                <td class="input"><input type="text" name="ubo1_first_name" value="{{ $form->primary_contact }}"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo1_first_name }}"></td>
                 <th>Nachname</th>
-                <td class="input"><input type="text" name="ubo1_last_name" value="{{ $form->primary_contact }}"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo1_last_name }}"></td>
             </tr>
             <tr>
                 <th>Geburtsdatum</th>
-                <td class="input"><input type="text" name="ubo1_dob" placeholder="TT.MM.JJJJ"></td>
-                <th>Geburtsort und -land</th>
-                <td class="input"><input type="text" name="ubo1_birth_place"></td>
+                <td class="input"><input type="text"
+                        value="{{ $form->ubo1_dob ? Carbon::parse($form->ubo1_dob)->format('d.m.Y') : '' }}"></td>
+                <th>Geburtsort</th>
+                <td class="input"><input type="text" value="{{ $form->ubo1_birthplace }}"></td>
             </tr>
             <tr>
                 <th>% der Anteile</th>
-                <td class="input"><input type="text" name="ubo1_shares" placeholder="%"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo1_share_percentage }}"></td>
                 <th>Wohnadresse</th>
-                <td class="input"><input type="text" name="ubo1_address"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo1_address }}"></td>
             </tr>
-            <tfoot>
-                <tr>
-                    <td colspan="4" class="note">
-                        Bitte fügen Sie dem Formular eine Kopie vom Reisepass
-                        oder Personalausweis bei.
-                    </td>
-                </tr>
-            </tfoot>
         </table>
 
         <!-- 2. UBO DETAILS -->
@@ -241,21 +234,22 @@
         <table>
             <tr>
                 <th>Vorname</th>
-                <td class="input"><input type="text" name="ubo2_first_name"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo2_first_name }}"></td>
                 <th>Nachname</th>
-                <td class="input"><input type="text" name="ubo2_last_name"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo2_last_name }}"></td>
             </tr>
             <tr>
                 <th>Geburtsdatum</th>
-                <td class="input"><input type="text" name="ubo2_dob" placeholder="TT.MM.JJJJ"></td>
-                <th>Geburtsort und -land</th>
-                <td class="input"><input type="text" name="ubo2_birth_place"></td>
+                <td class="input"><input type="text"
+                        value="{{ $form->ubo2_dob ? Carbon::parse($form->ubo2_dob)->format('d.m.Y') : '' }}"></td>
+                <th>Geburtsort</th>
+                <td class="input"><input type="text" value="{{ $form->ubo2_birthplace }}"></td>
             </tr>
             <tr>
                 <th>% der Anteile</th>
-                <td class="input"><input type="text" name="ubo2_shares" placeholder="%"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo2_share_percentage }}"></td>
                 <th>Wohnadresse</th>
-                <td class="input"><input type="text" name="ubo2_address"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo2_address }}"></td>
             </tr>
             <tfoot>
                 <tr>
@@ -279,21 +273,22 @@
         <table>
             <tr>
                 <th>Vorname</th>
-                <td class="input"><input type="text" name="ubo3_first_name"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo3_first_name }}"></td>
                 <th>Nachname</th>
-                <td class="input"><input type="text" name="ubo3_last_name"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo3_last_name }}"></td>
             </tr>
             <tr>
                 <th>Geburtsdatum</th>
-                <td class="input"><input type="text" name="ubo3_dob" placeholder="TT.MM.JJJJ"></td>
-                <th>Geburtsort und -land</th>
-                <td class="input"><input type="text" name="ubo3_birth_place"></td>
+                <td class="input"><input type="text"
+                        value="{{ $form->ubo3_dob ? Carbon::parse($form->ubo3_dob)->format('d.m.Y') : '' }}"></td>
+                <th>Geburtsort</th>
+                <td class="input"><input type="text" value="{{ $form->ubo3_birthplace }}"></td>
             </tr>
             <tr>
                 <th>% der Anteile</th>
-                <td class="input"><input type="text" name="ubo3_shares" placeholder="%"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo3_share_percentage }}"></td>
                 <th>Wohnadresse</th>
-                <td class="input"><input type="text" name="ubo3_address"></td>
+                <td class="input"><input type="text" value="{{ $form->ubo3_address }}"></td>
             </tr>
             <tfoot>
                 <tr>
@@ -356,59 +351,46 @@
             Der Unterzeichner erklärt sich als gesetzlicher Vertreter der Gesellschaft.
         </p>
 
-        <!-- <table>
-      <tr>
-        <th>Vor- und Nachname Unterzeichner</th>
-        <td class="input"><input type="text" name="sig_name"></td>
-        <th>Unterschrift</th>
-        <td class="input"><input type="text" name="signature" placeholder="…" /></td>
-      </tr>
-      <tr>
-        <th>Funktion</th>
-        <td class="input"><input type="text" name="sig_role"></td>
-        <th></th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Datum und Ort</th>
-        <td class="input"><input type="text" name="sig_date" placeholder="TT.MM.JJJJ, Ort"></td>
-      </tr>
-    </table> -->
         <table class="signature-table">
             <tr>
-                <th>Vor- und Nachname<br>Unterzeichner</th>
-                <td class="input"><input type="text" name="sig_name" value="{{ $form->primary_contact }}" /></td>
-                <!-- pull the signature label down over 3 rows -->
-                <th class="sig-label" rowspan="3" style="vertical-align: middle;">Unterschrift</th>
-                <!-- pull the blank signature area down over 3 rows -->
-                <td class="input sig-area" style="vertical-align: middle;" rowspan="3">
-                    <input type="text" name="signature" />
-                </td>
+                <th>Vorname</th>
+                <td class="input"><input type="text" value="{{ $form->signatory_first_name }}"></td>
+                <th>Nachname</th>
+                <td class="input"><input type="text" value="{{ $form->signatory_last_name }}"></td>
             </tr>
             <tr>
                 <th>Funktion</th>
-                <td class="input"><input type="text" name="sig_role" /></td>
+                <td class="input"><input type="text" value="{{ $form->signatory_function }}"></td>
+                <th>Datum</th>
+                <td class="input"><input type="text"
+                        value="{{ $form->signatory_date ? Carbon::parse($form->signatory_date)->format('d.m.Y') : '' }}">
+                </td>
             </tr>
-            <tr>
-                <th>Datum und Ort</th>
-                <td class="input"><input type="text" name="sig_date" placeholder="TT.MM.JJJJ, Ort" /></td>
-            </tr>
+            @if ($form->signature_file)
+                <tr>
+                    <th>Unterschrift</th>
+                    <td colspan="3">
+                        <img src="{{ asset('storage/' . $form->signature_file) }}" style="max-height:80px;">
+                    </td>
+                </tr>
+            @endif
         </table>
 
     </div>
 
     <div class="clearfix section">
-        <img src="logo.png" alt="Lieferando.de Logo" style="height:40px; float:right; margin:20px 0;">
+        <img src="{{ asset('assets/pdf_logo/03.png') }}" alt="Lieferando.de Logo"
+            style="height:40px; float:right; margin:20px 0;">
     </div>
 
 </body>
 
 </html>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    window.close();
-  });
+    //     window.addEventListener('DOMContentLoaded', () => {
+    //     window.print();
+    //   });
+    //   window.addEventListener('afterprint', () => {
+    //     window.close();
+    //   });
 </script>
