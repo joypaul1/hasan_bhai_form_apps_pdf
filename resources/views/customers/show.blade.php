@@ -10,45 +10,24 @@
             'customers.formFour.index' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
         ];
         $report_names = [
-            'customers.formOne.pdf' => 'CLOUDEATERY Kooperationsvereinbarung',
-            'customers.formTwo.pdf' => 'Lieferando CloudEatery Registration',
-            'customers.formThree.pdf' => 'Lieferando CloudEatery Registration Form Chains',
-            'customers.formFour.pdf' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
+            'customers.formOne.pdf' =>[
+                'name' => 'CLOUDEATERY Kooperationsvereinbarung',
+                'param' => 'one',
+            ],
+            'customers.formTwo.pdf' => [
+                'name' => 'Lieferando CloudEatery Registration',
+                'param' => 'two',
+            ],
+            'customers.formThree.pdf' => [
+                'name' => 'Lieferando CloudEatery Registration Form Chains',
+                'param' => 'three',
+            ],
+            'customers.formFour.pdf' => [
+                'name' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
+                'param' => 'four',
+            ],
         ];
-        // Slugs you pass as the 2nd param to the route + the label suffix
-        // $pdf_variants = [
-        //     'one' => 'CLOUDEATERY Kooperationsvereinbarung',
-        //     'two' => 'Lieferando CloudEatery Registration',
-        //     'three' => 'Lieferando CloudEatery Registration Form Chains',
-        //     'four' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
-        // ];
-        // $reports = [
-        //     'CLOUDEATERY Kooperationsvereinbarung' => [
-        //         'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-        //         'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-        //         'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
-        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'one'],
-        //     ],
-        //     'Lieferando CloudEatery Registration' => [
-        //         'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'two'],
-        //         'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-        //         'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
-        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'two'],
-        //     ],
-        //     'Lieferando CloudEatery Registration Form Chains' => [
-        //         'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-        //         'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-        //         'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
-        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
-        //     ],
-        //     'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
-        //         // 'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-        //         // 'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-        //         // 'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
-        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
-        //     ],
-        // ];
-        // $reports = [
+
         //     'Report-01' => [
         //         'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
         //         'Lieferando CloudEatery Registration' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
@@ -122,9 +101,9 @@
 
                             <div class="dropdown-menu" aria-labelledby="entryForm-">
                                 @foreach ($report_names as $routeName => $report)
-                                    <a href="{{ route($routeName, [$customer, 'one']) }}" target="_blank"
+                                    <a href="{{ route($routeName, [$customer, $report['param']]) }}" target="_blank"
                                         class="dropdown-item">
-                                        {{ $report }}
+                                        {{ $report['name'] }}
                                     </a>
                                 @endforeach
                             </div>
