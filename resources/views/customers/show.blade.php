@@ -9,6 +9,12 @@
             'customers.formThree.index' => 'Lieferando CloudEatery Registration Form Chains',
             'customers.formFour.index' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
         ];
+        $report_names = [
+            'customers.formOne.pdf' => 'CLOUDEATERY Kooperationsvereinbarung',
+            'customers.formTwo.pdf' => 'Lieferando CloudEatery Registration',
+            'customers.formThree.pdf' => 'Lieferando CloudEatery Registration Form Chains',
+            'customers.formFour.pdf' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
+        ];
         // Slugs you pass as the 2nd param to the route + the label suffix
         // $pdf_variants = [
         //     'one' => 'CLOUDEATERY Kooperationsvereinbarung',
@@ -16,70 +22,70 @@
         //     'three' => 'Lieferando CloudEatery Registration Form Chains',
         //     'four' => 'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)',
         // ];
-        $reports = [
-            'CLOUDEATERY Kooperationsvereinbarung' => [
-                'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-                'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
-                'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
-                'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'one'],
-            ],
-            'Lieferando CloudEatery Registration' => [
-                'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'two'],
-                'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-                'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
-                'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'two'],
-            ],
-            'Lieferando CloudEatery Registration Form Chains' => [
-                'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-                'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-                'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
-                'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
-            ],
-            'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
-                // 'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-                // 'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-                // 'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
-                'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
-            ],
-        ];
-        $reports = [
-            'Report-01' => [
-                'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
-                'Lieferando CloudEatery Registration' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
-                'Lieferando CloudEatery Registration Form Chains' => [
-                    'file' => 'customers.formThree.pdf',
-                    'param' => 'one',
-                ],
-                'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
-                    'file' => 'customers.formFour.pdf',
-                    'param' => 'one',
-                ],
-            ],
-            'Report-02' => [
-                'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-                'Lieferando CloudEatery Registration' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
-                'Lieferando CloudEatery Registration Form Chains' => [
-                    'file' => 'customers.formTwo.pdf',
-                    'param' => 'two',
-                ],
-                'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
-                    'file' => 'customers.formTwo.pdf',
-                    'param' => 'two',
-                ],
-            ],
-            'Report-03' => [
-                'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
-                'Lieferando CloudEatery Registration' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
-                'Lieferando CloudEatery Registration Form Chains' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
-                'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => ['file' => 'customers.formThree.pdf', 'param' => 'four'],
-            ],
-            'Report-04' => [
-                // 'Report-01' => ['file' => 'customers.formFour.pdf', 'param' => 'one'],
-                // 'Report-02' => ['file' => 'customers.formFour.pdf', 'param' => 'two'],
-                // 'Report-03' => ['file' => 'customers.formFour.pdf', 'param' => 'three'],
-                'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
-            ],
-        ];
+        // $reports = [
+        //     'CLOUDEATERY Kooperationsvereinbarung' => [
+        //         'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
+        //         'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+        //         'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
+        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'one'],
+        //     ],
+        //     'Lieferando CloudEatery Registration' => [
+        //         'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'two'],
+        //         'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+        //         'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
+        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'two'],
+        //     ],
+        //     'Lieferando CloudEatery Registration Form Chains' => [
+        //         'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
+        //         'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+        //         'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
+        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
+        //     ],
+        //     'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
+        //         // 'Report-01' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
+        //         // 'Report-02' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+        //         // 'Report-03' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
+        //         'Report-04' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
+        //     ],
+        // ];
+        // $reports = [
+        //     'Report-01' => [
+        //         'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formOne.pdf', 'param' => 'one'],
+        //         'Lieferando CloudEatery Registration' => ['file' => 'customers.formTwo.pdf', 'param' => 'one'],
+        //         'Lieferando CloudEatery Registration Form Chains' => [
+        //             'file' => 'customers.formThree.pdf',
+        //             'param' => 'one',
+        //         ],
+        //         'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
+        //             'file' => 'customers.formFour.pdf',
+        //             'param' => 'one',
+        //         ],
+        //     ],
+        //     'Report-02' => [
+        //         'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+        //         'Lieferando CloudEatery Registration' => ['file' => 'customers.formTwo.pdf', 'param' => 'two'],
+        //         'Lieferando CloudEatery Registration Form Chains' => [
+        //             'file' => 'customers.formTwo.pdf',
+        //             'param' => 'two',
+        //         ],
+        //         'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => [
+        //             'file' => 'customers.formTwo.pdf',
+        //             'param' => 'two',
+        //         ],
+        //     ],
+        //     'Report-03' => [
+        //         'CLOUDEATERY Kooperationsvereinbarung' => ['file' => 'customers.formThree.pdf', 'param' => 'one'],
+        //         'Lieferando CloudEatery Registration' => ['file' => 'customers.formThree.pdf', 'param' => 'two'],
+        //         'Lieferando CloudEatery Registration Form Chains' => ['file' => 'customers.formThree.pdf', 'param' => 'three'],
+        //         'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => ['file' => 'customers.formThree.pdf', 'param' => 'four'],
+        //     ],
+        //     'Report-04' => [
+        //         // 'Report-01' => ['file' => 'customers.formFour.pdf', 'param' => 'one'],
+        //         // 'Report-02' => ['file' => 'customers.formFour.pdf', 'param' => 'two'],
+        //         // 'Report-03' => ['file' => 'customers.formFour.pdf', 'param' => 'three'],
+        //         'Lieferando_UBO Blanco Vordruck1 (Nur bei GmbH & Co.)' => ['file' => 'customers.formFour.pdf', 'param' => 'four'],
+        //     ],
+        // ];
 
     @endphp
 
@@ -105,26 +111,26 @@
                         </div>
                     </div>
                 </div>
-                @foreach ($reports as $groupLabel => $items)
+
                     <div class="col-auto">
                         <div class="mx-2 dropdown">
                             <button class="btn btn-flat btn-outline-success dropdown-toggle" type="button"
-                                id="entryForm-{{ Str::slug($groupLabel) }}" data-toggle="dropdown" aria-haspopup="true"
+                                id="entryForm-" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
-                                <i class="ti-files"></i> {{ $groupLabel }}
+                                <i class="ti-files"></i> Reports
                             </button>
 
-                            <div class="dropdown-menu" aria-labelledby="entryForm-{{ Str::slug($groupLabel) }}">
-                                @foreach ($items as $reportCode => $item)
-                                    <a href="{{ route($item['file'], [$customer, $item['param']]) }}" target="_blank"
+                            <div class="dropdown-menu" aria-labelledby="entryForm-">
+                                @foreach ($report_names as $routeName => $report)
+                                    <a href="{{ route($routeName, [$customer, 'one']) }}" target="_blank"
                                         class="dropdown-item">
-                                        {{ $reportCode }}
+                                        {{ $report }}
                                     </a>
                                 @endforeach
                             </div>
                         </div>
                     </div>
-                @endforeach
+
 
             </div>
         </div>
