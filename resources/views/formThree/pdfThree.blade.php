@@ -31,6 +31,7 @@
             background: #fdebd0;
             font-weight: bold;
             text-transform: uppercase;
+            text-align: left;
         }
 
         .checkbox-cell {
@@ -168,7 +169,11 @@
         </tr>
         <tr>
             <td colspan="2" style="font-size:0.8em; color:#555;">
-                * Sie sind eine PEP, wenn… (Text unverändert)
+                * Sie sind eine PEP, wenn:<br>
+                1. Sie eine höhere politische oder öffentliche Rolle einnehmen…<br>
+                2. Sie ein Familienmitglied von…<br>
+                3. Sie eine enge Geschäftsbeziehung…<br>
+                Warum wir fragen… dieser Teil der Anmeldung ist…
             </td>
         </tr>
     </table>
@@ -178,23 +183,23 @@
             <th colspan="2">Gebühren &amp; Zahlungen</th>
         </tr>
         <tr>
-            <td>Provision pro Own-Delivery Bestellung</td>
+            <td>Provision** pro Own-Delivery Bestellung</td>
             <td>{{ $form->fee_own_delivery ?? '—' }} €</td>
         </tr>
         <tr>
-            <td>Provision pro Lieferung durch Lieferando Bestellung</td>
+            <td>Provision** pro Lieferung durch Lieferando Bestellung</td>
             <td>{{ $form->fee_platform_delivery ?? '—' }} €</td>
         </tr>
         <tr>
-            <td>Provision pro Bestellung bei Abholung</td>
+            <td>Provision** pro Bestellung bei Abholung</td>
             <td>{{ $form->fee_pickup ?? '—' }} €</td>
         </tr>
         <tr>
-            <td>Online-Zahlungsgebühr pro Bestellung</td>
+            <td>Online-Zahlungsgebühr pro Bestellung (EUR)</td>
             <td>{{ $form->fee_online_payment ?? '—' }} €</td>
         </tr>
         <tr>
-            <td>Kosten für Terminal</td>
+            <td>Kosten für Terminal (EUR)</td>
             <td>{{ $form->terminal_cost ?? '—' }} €</td>
         </tr>
     </table>
@@ -204,7 +209,7 @@
 
     <table>
         <tr>
-            <td>NEU – Banner (zunächst 4 Wochen)</td>
+            <td>NEU - Banner (zunächst 4 Wochen)</td>
             <td>{{ $form->banner_fee ?? '—' }} €</td>
         </tr>
         <tr>
@@ -310,6 +315,15 @@
         <tr>
             <td>E-Mail-Adresse für Kunden</td>
             <td>{{ $form->site_customer_email }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-size:0.8em; color:#555;">
+                Wie gesetzlich vorgeschrieben, müssen Sie eine E-Mail-Adresse angeben, die für Kunden sichtbar ist,
+                damit diese Sie kontaktieren können.
+                Wir werden diese E-Mail-Adresse auf Lieferando anzeigen. Bitte stellen Sie sicher, dass Sie keine
+                persönliche E-Mail-Adresse für diesen Zweck
+                verwenden
+            </td>
         </tr>
     </table>
 
@@ -528,10 +542,10 @@
 
 </html>
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    window.close();
-  });
+//     window.addEventListener('DOMContentLoaded', () => {
+//     window.print();
+//   });
+//   window.addEventListener('afterprint', () => {
+//     window.close();
+//   });
 </script>
