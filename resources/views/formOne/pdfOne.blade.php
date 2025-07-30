@@ -9,7 +9,7 @@
             margin: 2cm;
             font-family: Arial, sans-serif;
             line-height: 1.6;
-             text-align: justify;
+            text-align: justify;
         }
 
         /* Logo */
@@ -77,7 +77,7 @@
             padding-right: 1em;
             font-weight: bold;
             text-align: left;
-            font-size:14px
+            font-size: 14px
         }
 
         .block-table .field {
@@ -134,6 +134,7 @@
         .checkbox-line strong {
             margin-right: 0.5em;
         }
+
         /* .checkbox-line input {
             margin-right: 0.5em;
         } */
@@ -172,6 +173,7 @@
             margin: 2em 0 0.5em;
             text-transform: uppercase;
         }
+
         /* .preamble{
            
         } */
@@ -545,11 +547,11 @@
         <tr>
             <td>
                 <div class="line"></div>
-               {{date('d/m/Y')}}
+                {{ date('d/m/Y') }}
             </td>
             <td>
                 <div class="line"></div>
-                 {{date('d/m/Y')}}
+                {{ date('d/m/Y') }}
             </td>
         </tr>
         <tr>

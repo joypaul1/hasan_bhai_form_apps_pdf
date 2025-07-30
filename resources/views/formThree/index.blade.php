@@ -529,18 +529,44 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Website und Domain registriert und verwaltet von Lieferando</label>
-                                <input type="text" name="website_domain"
+                                {{-- <input type="text" name="website_domain"
                                     class="form-control @error('website_domain') is-invalid @enderror"
-                                    value="{{ old('website_domain', $form->website_domain) }}">
+                                    value="{{ old('website_domain', $form->website_domain) }}"> --}}
+                                <select name="website_domain"
+                                    class="form-control @error('website_domain') is-invalid @enderror">
+                                    <option value="">---</option>
+                                    <option value="1"
+                                        {{ old('website_domain', $form->website_domain) == 1 ? 'selected' : '' }}>
+                                        Ja</option>
+                                    <option value="0"
+                                        {{ old('website_domain', $form->website_domain) == 0 ? 'selected' : '' }}>
+                                        Nein</option>
+                                </select>
                                 @error('website_domain')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Verbindungsmethode</label>
-                                <input type="text" name="connection_method"
+                                {{-- <input type="text" name="connection_method"
                                     class="form-control @error('connection_method') is-invalid @enderror"
-                                    value="{{ old('connection_method', $form->connection_method) }}">
+                                    value="{{ old('connection_method', $form->connection_method) }}"> --}}
+                                <select name="connection_method"
+                                    class="form-control @error('connection_method') is-invalid @enderror">
+                                    <option value="">---</option>
+                                    <option value="T-Connect"
+                                        {{ old('connection_method', $form->connection_method) == 'T-Connect' ? 'selected' : '' }}>
+                                        T-Connect</option>
+                                    <option value="Terminal"
+                                        {{ old('connection_method', $form->connection_method) == 'Terminal' ? 'selected' : '' }}>
+                                        Terminal</option>
+                                    <option value="POS-API"
+                                        {{ old('connection_method', $form->connection_method) == 'POS-API' ? 'selected' : '' }}>
+                                        POS-API : </option>
+                                    <option value="Sonstiges"
+                                        {{ old('connection_method', $form->connection_method) == 'Sonstiges' ? 'selected' : '' }}>
+                                        Sonstiges : </option>
+                                </select>
                                 @error('connection_method')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
