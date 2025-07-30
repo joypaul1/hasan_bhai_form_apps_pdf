@@ -10,34 +10,20 @@
             margin: 0;
             padding: 0;
             color: #454648;
+            text-align: justify;
         }
 
         .header {
-            background-color: #ff6600;
-            color: white;
-            padding: 20px;
             display: flex;
-            align-items: center;
         }
 
         .header img {
-            height: 40px;
-            margin-right: 20px;
-        }
-
-        .header .title {
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .header .subtitle {
-            font-size: 12px;
-            margin-left: auto;
+            width: 100%;
+            height: 100px;
         }
 
         .section {
-            margin: 20px;
+            margin: 5%;
         }
 
         .section h2 {
@@ -52,13 +38,11 @@
         .grey-bg {
             background-color: #f2f2f2;
             padding: 0.5%;
-            /*margin-top: 10px; */
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            /*margin-top: 10px;*/
         }
 
         table tr {
@@ -136,15 +120,19 @@
             margin-top: 20px;
         }
 
-        .clearfix::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        /* page break for print/PDF */
         .page-break {
             page-break-before: always;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer img {
+            height: 100px;
+            margin-right: 5%;
         }
     </style>
 </head>
@@ -154,8 +142,6 @@
     <!-- Page 1 -->
     <div class="header">
         <img src="{{ asset('assets/pdf_logo/02.png') }}" alt="Lieferando.de Logo">
-        {{-- <div class="title">Ultimate Beneficial Ownership (UBO) Declaration Form</div>
-        <div class="subtitle">Erklärung des Inhabers/Gesellschafters</div> --}}
     </div>
 
     <div class="section">
@@ -178,13 +164,11 @@
 
     <div class="section grey-bg">
         <p><strong>A.</strong>Ein UBO ist eine Person, die das Restaurant durch einen direkten oder indirekten Anteil
-            <strong>von mehr als 25%</strong> besitzt
-            oder kontrolliert.
+            <strong>von mehr als 25%</strong> besitzt oder kontrolliert.
         </p>
         <ul class="checkbox-list">
             <li><label><input type="checkbox" name="has_ubo">Das Restaurant hat einen oder mehrere UBO’s → fahren Sie
-                    mit
-                    Abschnitt B fort</label></li>
+                    mit Abschnitt B fort</label></li>
             <li><label><input type="checkbox" name="no_ubo">Das Restaurant hat keinen UBO → fahren Sie mit Abschnitt C
                     fort</label></li>
             <li>
@@ -200,13 +184,11 @@
     </div>
 
     <!-- Page 2 -->
-
     @php use Carbon\Carbon; @endphp
     <div class="section">
         <p><strong>B. </strong> Ultimate Beneficial Owner(s)</p>
 
-        <!-- 1. UBO DETAILS -->
-        <h2 style="font-size:13px; background-color:#ff6600; margin-top:20px;">1. UBO Details</h2>
+        <h2>1. UBO Details</h2>
         <table>
             <tr>
                 <th>Vorname</th>
@@ -227,10 +209,16 @@
                 <th>Wohnadresse</th>
                 <td class="input"><input type="text" value="{{ $form->ubo1_address }}"></td>
             </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="note">
+                        Bitte fügen Sie dem Formular eine Kopie vom Reisepass oder Personalausweis bei.
+                    </td>
+                </tr>
+            </tfoot>
         </table>
 
-        <!-- 2. UBO DETAILS -->
-        <h2 style="font-size:13px; background-color:#ff6600; margin-top:20px;">2. UBO Details</h2>
+        <h2>2. UBO Details</h2>
         <table>
             <tr>
                 <th>Vorname</th>
@@ -254,22 +242,19 @@
             <tfoot>
                 <tr>
                     <td colspan="4" class="note">
-                        Bitte fügen Sie dem Formular eine Kopie vom Reisepass
-                        oder Personalausweis bei.
+                        Bitte fügen Sie dem Formular eine Kopie vom Reisepass oder Personalausweis bei.
                     </td>
                 </tr>
             </tfoot>
-
         </table>
 
         <div class="page-break"></div>
-        <!-- UBO Declaration Form Header -->
-        <div class="ubo-declaration-header">
+
+        <div class="ubo-declaration-header" style="margin-bottom: 5%;margin-top: 5%">
             ULTIMATE BENEFICIAL OWNERSHIP (UBO) DECLARATION FORM
         </div>
 
-        <!-- 3. UBO DETAILS -->
-        <h2 style="font-size:13px; background-color:#ff6600; margin-top:20px;">3. UBO Details</h2>
+        <h2>3. UBO Details</h2>
         <table>
             <tr>
                 <th>Vorname</th>
@@ -293,17 +278,12 @@
             <tfoot>
                 <tr>
                     <td colspan="4" class="note">
-                        Bitte fügen Sie dem Formular eine Kopie vom Reisepass
-                        oder Personalausweis bei.
+                        Bitte fügen Sie dem Formular eine Kopie vom Reisepass oder Personalausweis bei.
                     </td>
                 </tr>
             </tfoot>
-
         </table>
-
     </div>
-
-
 
     <div class="section">
         <p><strong>C.</strong> Person(en), die das Restaurant gegenüber Takeaway.com oder einem seiner verbundenen
@@ -314,83 +294,67 @@
             <tr>
                 <th>Vor- und Nachname</th>
                 <th>Geburtsdatum</th>
-                <th>Dokument zur Überprüfung der Vertreterrechte</th>
-                <th>Bitte fügen Sie dem Formular eine Kopie vom Reisepass oder Personalausweis des gesetzlichen
-                    Vertreters bei</th>
+                <th>Dokument</th>
+                <th>Kopie beigelegt</th>
             </tr>
-            <!-- Drei Zeilen als Beispiel -->
             <tr>
                 <td class="input"><input type="text" name="rep1_name"></td>
-                <td class="input"><input type="text" name="rep1_dob" placeholder="TT.MM.JJJJ"></td>
+                <td class="input"><input type="text" name="rep1_dob" placeholder=""></td>
                 <td class="input"><input type="text" name="rep1_doc"></td>
                 <td class="input" style="text-align:center"><input type="checkbox" name="rep1_id"></td>
             </tr>
             <tr>
                 <td class="input"><input type="text" name="rep2_name"></td>
-                <td class="input"><input type="text" name="rep2_dob" placeholder="TT.MM.JJJJ"></td>
+                <td class="input"><input type="text" name="rep2_dob" placeholder=""></td>
                 <td class="input"><input type="text" name="rep2_doc"></td>
                 <td class="input" style="text-align:center"><input type="checkbox" name="rep2_id"></td>
             </tr>
             <tr>
-                <td class="input"><input type="text" name="rep3_name"></td>
-                <td class="input"><input type="text" name="rep3_dob" placeholder="TT.MM.JJJJ"></td>
-                <td class="input"><input type="text" name="rep3_doc"></td>
-                <td class="input" style="text-align:center"><input type="checkbox" name="rep3_id"></td>
+                <td class="input"><input type="text" name="rep2_name"></td>
+                <td class="input"><input type="text" name="rep2_dob" placeholder=""></td>
+                <td class="input"><input type="text" name="rep2_doc"></td>
+                <td class="input" style="text-align:center"><input type="checkbox" name="rep2_id"></td>
             </tr>
         </table>
     </div>
 
-
-
     <div class="section">
-        <p>
-            Wir erklären, dass wir Lieferando.de schriftlich über jede Änderung der oben genannten Details informieren
+        <p>   Wir erklären, dass wir Lieferando.de schriftlich über jede Änderung der oben genannten Details informieren
             werden.<br>
             Der Unterzeichner erklärt hiermit, dass die in diesem Formular eingegebenen Informationen wahr und richtig
             sind.
-            Der Unterzeichner erklärt sich als gesetzlicher Vertreter der Gesellschaft.
-        </p>
-
+            Der Unterzeichner erklärt sich als gesetzlicher Vertreter der Gesellschaft.</p>
         <table class="signature-table">
-            <tr>
-                <th>Vorname</th>
-                <td class="input"><input type="text" value="{{ $form->signatory_first_name }}"></td>
-                <th>Nachname</th>
-                <td class="input"><input type="text" value="{{ $form->signatory_last_name }}"></td>
-            </tr>
-            <tr>
-                <th>Funktion</th>
-                <td class="input"><input type="text" value="{{ $form->signatory_function }}"></td>
-                <th>Datum</th>
-                <td class="input"><input type="text"
-                        value="{{ $form->signatory_date ? Carbon::parse($form->signatory_date)->format('d.m.Y') : '' }}">
-                </td>
-            </tr>
-            @if ($form->signature_file)
+            <tbody>
                 <tr>
-                    <th>Unterschrift</th>
-                    <td colspan="3">
+                    <th>Vor- und Nachname</th>
+                    <td class="input"><input type="text" value="{{ $form->signatory_first_name }}"></td>
+                    <th rowspan="3">Unterschrift</th>
+                    <td class="input sig-area" rowspan="3">
                         <img src="{{ asset('storage/' . $form->signature_file) }}" style="max-height:80px;">
                     </td>
                 </tr>
-            @endif
+                <tr>
+                    <th>Funktion</th>
+                    <td class="input"><input type="text" value="{{ $form->signatory_function }}"></td>
+                </tr>
+                <tr>
+                    <th>Datum und Ort</th>
+                    <td class="input"><input type="text"
+                            value="{{ $form->signatory_date ? Carbon::parse($form->signatory_date)->format('d.m.Y') : '' }}">
+                    </td>
+                </tr>
+            </tbody>
         </table>
 
-    </div>
-
-    <div class="clearfix section">
-        <img src="{{ asset('assets/pdf_logo/03.png') }}" alt="Lieferando.de Logo"
-            style="height:40px; float:right; margin:20px 0;">
+        <!-- ✅ Add footer image only here to prevent extra page -->
+        <div style="position: relative; height: 120px; margin-top: 60px;">
+            <div style="position: absolute; bottom: 0; right: 0; width: 100%; text-align: right; padding-right: 5%;">
+                <img src="{{ asset('assets/pdf_logo/03.png') }}" alt="Lieferando.de Logo" style="height:120px;">
+            </div>
+        </div>
     </div>
 
 </body>
 
 </html>
-<script>
-    //     window.addEventListener('DOMContentLoaded', () => {
-    //     window.print();
-    //   });
-    //   window.addEventListener('afterprint', () => {
-    //     window.close();
-    //   });
-</script>
